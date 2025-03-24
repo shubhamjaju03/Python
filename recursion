@@ -1,0 +1,11 @@
+def show(n):
+  if(n==(-1)): #base case And if i remove this that program will crash so its important
+    return
+  print(n)
+  show(n-1)
+  print("END") #IT CAN BE REMOVED
+
+show(3) #call stack 
+
+
+#NOTE- ALL THE COMMENTS ARE FOR UNDERSTANDING PURPOSE
