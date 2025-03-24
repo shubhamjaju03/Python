@@ -1,0 +1,9 @@
+def print_list(list,idx = 0):
+  if(idx==len(list)):
+    return
+  print(list[idx])
+  print_list(list,idx+1)
+
+Names=["Shubham","Rishij","Aayush"] #you can change the list as per your  requirements
+
+print_list(Names)
