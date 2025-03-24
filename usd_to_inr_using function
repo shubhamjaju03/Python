@@ -1,0 +1,5 @@
+def usd2(usd):
+  inr=usd * 84
+  print(usd,"USD=",inr,"INR")
+
+usd2(5) #enter the value you want to be converted
