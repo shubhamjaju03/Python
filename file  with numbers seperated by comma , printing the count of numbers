@@ -1,0 +1,11 @@
+count = 0
+with open(r"C:\Users\shubh\Downloads\demo.txt", "r") as f: #you can replace the path as ur desired requirements
+    data = f.read()
+    print(data)
+
+    nums = data.split(",")  
+    for i in nums:
+        if int(i) % 2 == 0:  
+            count += 1
+
+print(count)
