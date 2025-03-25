@@ -1,0 +1,18 @@
+def check():
+    word = "learning"
+    line_no = 1
+    
+    with open(r"C:\Users\shubh\Downloads\demo.txt", "r") as f: #here you use file path or u can use your filename.txt or whatever it is in format
+        while True:
+            data = f.readline()
+            if not data:  
+                break
+            if word in data:  
+                print(f"Word found at line {line_no}")
+                return
+            line_no += 1
+    
+    print("Word not found")  
+    return -1
+
+check()
