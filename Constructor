@@ -1,0 +1,11 @@
+class car:
+    def __init__(self, brandname, model):
+        self.brand = brandname  
+        self.model = model
+        print("Adding New Car to the database....")
+
+car1 = car("Mercedes", "B340")  
+print(car1.brand, car1.model)  
+
+car2 = car("Honda", "H140")  
+print(car2.brand, car2.model)  
