@@ -1,0 +1,18 @@
+class Student:
+  def __init__(self,name,score):
+    self.name=name
+    self.score=score
+
+    
+  @staticmethod
+  def hello():   #using static method we dont need class
+    print("Hello")
+  def get_avg(self):
+    sum = 0  
+    for i in self.score: 
+      sum += i
+    print("Hello", self.name, "Your marks average is:", sum / 3)  
+
+s1 = Student("Shubham",[98,91,92]) 
+s1.get_avg()
+s1.hello()
