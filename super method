@@ -1,0 +1,22 @@
+class Car:
+    def __init__(self, type):
+        self.type = type  # Parent class attribute
+
+    @staticmethod
+    def start():
+        print("Car started...")
+
+    @staticmethod
+    def stop():
+        print("Car stopped..")
+
+class Benz(Car):
+    def __init__(self, name, type):
+        self.name = name  # Child class attribute
+        super().__init__(type)  
+
+car1 = Benz("Mercedes-Benz S-Class", "Mercedes")
+car2 = Benz("Toyota Camry", "Toyota")
+
+car1.start()  
+print(car1.type)
