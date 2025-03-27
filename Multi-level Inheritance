@@ -1,0 +1,20 @@
+class Car:      #First class
+    @staticmethod
+    def start():
+        print("Car started.....")
+
+    @staticmethod
+    def stop():
+        print("Car stopped..")
+
+class Benz(Car):   #Second Class
+    def __init__(self, brand):
+        self.brand = brand
+
+class Toyota(Car): #Third Class
+    def __init__(self, brand):
+        self.brand = brand
+
+car1 = Toyota("diesel")
+
+car1.start() 
