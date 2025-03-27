@@ -1,0 +1,12 @@
+class Student:
+    name = "Rishij"  
+
+    @classmethod
+    def Name(cls, name): 
+        cls.name = name 
+
+p1 = Student()  
+print("The old name is ",p1.name) #before changing class value
+p1.Name("Shubham")  
+print("The new name is ",Student.name) 
+print("The new name is ",p1.name)
