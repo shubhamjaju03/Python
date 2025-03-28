@@ -1,0 +1,19 @@
+class Order:
+    def __init__(self, item, price):
+        self.item = item
+        self.price = price
+
+    def __gt__(self, other):
+        return self.price > other.price
+
+    def __lt__(self, other):
+        return self.price < other.price
+
+odr1 = Order("chips", 20)
+odr2 = Order("burger", 30)
+
+# Fixing print statement
+if odr1 > odr2:
+    print("True")  # Prints True if odr1 is greater
+else:
+    print("False")  # Prints False if odr1 is lesser
