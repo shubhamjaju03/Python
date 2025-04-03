@@ -1,0 +1,6 @@
+Name = input("Enter the Name of the customer: ")  
+Product = input("Enter the name of the product: ")  
+Price = int(input("Enter the price of the product: "))  
+Quantity = int(input("Enter the quantity of the product: "))  
+
+print(f"Name of customer is: {Name}\nProduct: {Product}\nPrice of the product: {Price}\nQuantity: {Quantity}\nTotal cost: {Quantity * Price}")
