@@ -1,0 +1,3 @@
+number = list(map(int, input("Enter numbers separated by commas: ").split(',')))
+print("Maximum value:", max(number))
+print("Minimum value:", min(number))
