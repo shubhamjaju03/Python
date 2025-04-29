@@ -1,0 +1,5 @@
+number = [3,4]
+if number:
+  print("List is not empty")
+else:
+  print("List is empty")
