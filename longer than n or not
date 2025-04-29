@@ -1,0 +1,6 @@
+Name = ["Shubham","Aayush","Rishij","Alu"]
+n = int(input("Enter the value of n: "))
+if len(Name) == n:
+  print("Name is not longer than n ")
+else:
+  print("Name is longer than n")
