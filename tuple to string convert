@@ -1,0 +1,4 @@
+num = input("Enter numbers separated by commas: ")
+tup = tuple(map(int, num.split(',')))
+tup_str = ','.join(map(str, tup))
+print("Tuple as string:", tup_str)
