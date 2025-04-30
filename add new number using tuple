@@ -1,0 +1,5 @@
+tup = (2, 4)
+new = input("Enter new numbers separated by commas: ")
+t2 = tuple(map(int, new.split(',')))
+num = tup + t2
+print("Updated tuple:", num)
