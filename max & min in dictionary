@@ -1,0 +1,5 @@
+dic1={1:10,4:20,3:30}
+maximum= max(dic1.values())
+print("The max no is : ",maximum)
+minimum= min(dic1.values())
+print("The min no is : ",minimum)
