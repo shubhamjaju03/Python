@@ -1,0 +1,6 @@
+dict0 = {1: 10, 2: 20, 3: 30}
+key = int(input("Enter key to check: "))
+if key in dict0:
+    print("Key exists!")
+else:
+    print("Key does not exist.")
