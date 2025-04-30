@@ -1,0 +1,3 @@
+dic1={1:10,4:20,3:30}
+sort=sorted(dic1.keys())
+print("Sorted keys are : ",sort)
