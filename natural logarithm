@@ -1,0 +1,4 @@
+import math
+a = int(input("Enter a: "))
+c = math.log(a)
+print("natural logarithm is:", c)
