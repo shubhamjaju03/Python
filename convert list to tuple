@@ -1,0 +1,4 @@
+num    = input("Enter numbers separated by commas: ")
+list1  = list(map(int, num.split(',')))
+tup    = tuple(list1) 
+print("Converted tuple:", tup)
