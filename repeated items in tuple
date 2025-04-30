@@ -1,0 +1,6 @@
+num = input("Enter numbers separated by commas: ")
+tup = tuple(map(int, num.split(',')))
+print("Repeated items are:")
+for i in set(tup):
+    if tup.count(i) > 1:
+        print(i)
