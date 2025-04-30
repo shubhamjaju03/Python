@@ -1,0 +1,14 @@
+l1 = list(map(int, input("Enter numbers separated by commas: ").split(',')))
+l2 = list(map(int, input("Enter numbers separated by commas: ").split(',')))
+
+diff = []
+
+for num in l1:
+    if num not in l2:
+        diff.append(num)
+
+for num in l2:
+    if num not in l1:
+        diff.append(num)
+
+print("The numbers which are different in lists are:", diff)
