@@ -1,0 +1,3 @@
+num= input("Enter numbers separated by commas: ")
+tup = tuple(map(int, num.split(',')))
+print("The last 4th element is :", tup[-4])
