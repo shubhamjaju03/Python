@@ -1,0 +1,19 @@
+import qrcode  
+
+
+upi_id = input("Enter your UPI ID: ")
+
+upi_link = "upi://pay?pa=" + upi_id + "&pn=RecipientName&mc=1234"
+
+
+gpay_qr = qrcode.make(upi_link)
+paytm_qr = qrcode.make(upi_link)
+phonepe_qr = qrcode.make(upi_link)
+
+gpay_qr.save("gpay.png")
+paytm_qr.save("paytm.png")
+phonepe_qr.save("phonepe.png")
+
+gpay_qr.show()
+paytm_qr.show()
+phonepe_qr.show()
