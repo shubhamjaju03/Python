@@ -1,0 +1,32 @@
+menu = {
+    'Pizza': 200,
+    'Pasta': 250,
+    'Dal': 300,
+    'Naan': 90,
+    'Kulcha': 125,
+    'Salad': 250
+}
+
+print("Welcome To Shubham's Cafe")
+print("Menu:")
+print("Pizza = Rs 200\nPasta = Rs 250\nDal = Rs 300\nNaan = Rs 90\nKulcha = Rs 125\nSalad = Rs 250")
+
+order_total = 0
+
+item1 = input("Enter the name of the item you want to order: ")
+if item1 in menu:
+    order_total += menu[item1]
+    print(f"Your item '{item1}' has been added.")
+else:
+    print(f"Item '{item1}' is not available.")
+
+another_order = input("Do you want to order another item? (Yes/No): ")
+if another_order == "Yes":
+    item2 = input("Enter the name of the second item: ")
+    if item2 in menu:
+        order_total += menu[item2]
+        print(f"Your item '{item2}' has been added.")
+    else:
+        print(f"Item '{item2}' is not available.")
+
+print(f"Your total bill is Rs {order_total}")
