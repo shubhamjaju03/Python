@@ -1,0 +1,21 @@
+email = input("Enter your email: ")
+
+if len(email) >= 6:
+    if email[0].isalpha():
+        if " " not in email:
+            if "@" in email and email.count("@") == 1:
+                if "." in email[email.index("@"):]: 
+                    if email[-4] == '.' or email[-3] == '.':
+                        print("Valid email!")
+                    else:
+                        print("'.' is not positioned correctly (e.g., should be like '.com', '.in').")
+                else:
+                    print("Email must contain a '.' after the '@'.")
+            else:
+                print("Email must contain exactly one '@'.")
+        else:
+            print("Email should not contain any spaces.")
+    else:
+        print("Email must start with an alphabet.")
+else:
+    print("Email is too short (must be at least 6 characters).")
