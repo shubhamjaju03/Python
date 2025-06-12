@@ -1,0 +1,3 @@
+print("Hello World\nHello World\nHello World")
+
+#With the help of  “\n” in our statement we can print things in different lines there is no need ot seperated print statements it makes the code easier and short
