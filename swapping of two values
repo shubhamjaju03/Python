@@ -1,0 +1,11 @@
+a = input()
+b = input()  
+
+c = a
+a = b
+b = c
+
+print("a: " + a)
+print("b: " + b)
+
+#swapped the values with the help of temporary storage which is "c" in this case
