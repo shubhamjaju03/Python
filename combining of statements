@@ -1,0 +1,3 @@
+print("Hello " + input("Enter your name : ") + " How are you! I am " + input("Enter your feeling : "))
+
+  # With the help of + btw the two statements  within the open and closed bracket we can add different statements which can be user input which can be string or integer or whatever it is.
