@@ -1,0 +1,4 @@
+num = (input("Enter two numbers"))  # takes input like '45'
+num2 = int(num[0])  # first character, e.g., '4'
+num3 = int(num[1])  # second character, e.g., '5'
+print(num2 + num3)  # adds 4 + 5 = 9
