@@ -1,0 +1,6 @@
+age=int(input("Enter your age : "))
+year=(90-(age)) #substracting your age with 90
+left=year*52 #remaining age multiplication with 52 weeks in a year
+print(f"The life you have left is {left} weeks")
+
+#here we have used 90 years as the maximum age for the person
