@@ -1,0 +1,10 @@
+import random
+
+name_string = input("Enter all names separated by a comma: ")
+names = name_string.split(", ")
+
+num = len(names)
+num2 = random.randint(0, num - 1)
+
+person = names[num2]
+print(f"{person} is gonna pay the bill for today!")
