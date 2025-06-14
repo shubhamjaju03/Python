@@ -1,0 +1,28 @@
+print("----- Welcome to the Love Calculator -----")
+n1 = input("Enter Partner 1 Name: ")
+n2 = input("Enter Partner 2 Name: ")
+
+combine = n1 + n2
+lowe_r = combine.lower()
+
+t = lowe_r.count("t")
+r = lowe_r.count("r")
+u = lowe_r.count("u")
+e = lowe_r.count("e")
+first = t + r + u + e
+
+l = lowe_r.count("l")
+o = lowe_r.count("o")
+v = lowe_r.count("v")
+e = lowe_r.count("e")
+second = l + o + v + e
+
+# Corrected line
+code = int(str(first) + str(second))
+
+if code < 10 or code > 90:
+    print(f"Your score is {code}, you both go together like Coke and Mentos.")
+elif 40 <= code <= 50:
+    print(f"Your score is {code}, you are alright together.")
+else:
+    print(f"Your score is {code}.")
