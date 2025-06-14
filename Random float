@@ -1,0 +1,4 @@
+import random
+
+n=random.random() #it doesnt allow any arguments between it and it follows 0.0 to 1.0 by random if we try to put arguments it will give error
+print(f"The random float is {n}")
