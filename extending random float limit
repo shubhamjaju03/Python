@@ -1,0 +1,4 @@
+import random
+
+n = random.random() * 5  # This gives a random float in the range 0.0, 5.0
+print(f"The random float is {n}")
