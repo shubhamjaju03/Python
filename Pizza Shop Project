@@ -1,0 +1,29 @@
+print("----- Welcome to Shubham's Pizza -----")
+n = input("Enter the size of Pizza you want (S, M, L): ")
+bill = 0
+
+
+if n == "S":
+    bill = 15
+elif n == "M":
+    bill = 20
+elif n == "L":
+    bill = 25
+else:
+    print("Invalid size selected exiting ....")
+    exit()
+    
+pepp = input("Do you want Pepperoni? (Y or N): ")
+if pepp == "Y":
+    if n == "S":
+        bill += 2
+    else:
+        bill += 3
+
+extra = input("Do you want Extra Cheese? (Y or N): ")
+if extra == "Y":
+    bill += 1
+
+print("Thanks For Choosing Shubham's Pizza ")
+print(f"The size of the pizza is {n}.")
+print(f"Your final bill is: $ {bill}")
