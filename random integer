@@ -1,0 +1,4 @@
+import random #must to randomize numbers
+
+n=random.randint(1,20) #range of the integer which system can draw randomly
+print(f"The random integer is {n}")
