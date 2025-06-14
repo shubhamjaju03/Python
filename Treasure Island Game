@@ -1,0 +1,29 @@
+print("""
+          _______________________
+         /                      /|
+        /______________________/ |
+        |     ________        |  |
+        |    |        |       |  |
+        |    |  💰💎🪙  |       |  |
+        |    |________|       |  |
+        |                     |  |
+        |_____________________| /
+        |_____________________|/
+""")
+
+print("🏝️ Welcome to Treasure Island 🏝️")
+print("Your mission is to find the hidden treasure of the Golden Skull!\n")
+
+n = input("You arrive at a forked jungle path. Do you take the 'mystic trail' or the 'dark cave'? ").lower()
+if n == "mystic trail":
+    choice2 = input("You reach an enchanted river. Do you 'build a raft' or 'call the spirit eagle'? ").lower()
+    if choice2 == "call the spirit eagle":
+        choice3 = input("The eagle drops you at three ancient doors marked 'dragon', 'serpent', and 'phoenix'. Which do you choose? ").lower()
+        if choice3 == "phoenix":
+            print("🔥 The Phoenix door opens to a glowing chamber full of treasure! You win! 🎉")
+        else:
+            print("🚪 The door traps you in a magical curse. Game Over.")
+    else:
+        print("🌊 A flood sweeps your raft away. Game Over.")
+else:
+    print("🦇 You are lost in the cave's darkness forever. Game Over.")
