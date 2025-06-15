@@ -1,0 +1,12 @@
+
+target = int(input("Enter the number: "))
+
+total = 0
+
+even=[]
+for i in range(0, target + 1):
+    if i % 2 == 0:
+        print(i)        
+        total += i       
+
+print("Sum of even numbers:", total)
