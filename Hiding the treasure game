@@ -1,0 +1,26 @@
+row1 = ["▇", "▇", "▇"]
+row2 = ["▇", "▇", "▇"]
+row3 = ["▇", "▇", "▇"]
+
+map = [row1, row2, row3]
+position = input("Where do you want to hide the treasure? (e.g., A1, B2): ") #  Asking the user for the position (like A1, B2, etc.)
+
+letter = position[0]  # first character, ['A', 'B', or 'C'] #Getting the column (letter) and row (number) from the input
+number = position[1]  # second character ['1', '2', or '3'] #Getting the row (number) from the input
+
+if letter == "A": # Converting the letter to a column number
+    col = 0
+elif letter == "B":
+    col = 1
+else:
+    col = 2
+
+if number == "1": # Converting the number to a row index
+    row = 0
+elif number == "2":
+    row = 1
+else:
+    row = 2
+
+map[row][col] = "X" # Puts an X at that spot from the user input
+print(f"{row1}\n{row2}\n{row3}") # STEP 7: Prints the updated map
