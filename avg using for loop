@@ -1,0 +1,8 @@
+student=input("Enter the height of  students seperated by , : ").split(",")
+for i in range(0,len(student)):
+    student[i]=int(student[i])
+    
+total=sum(student)
+number=len(student)
+avg=total/number
+print(f"The average height of the {number} students is {avg}")
