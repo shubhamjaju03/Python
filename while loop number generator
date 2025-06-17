@@ -1,0 +1,6 @@
+Number = int(input("Enter your number : "))
+while Number > 0 :      #it will run till the condition of number ends
+    print(f"The New Number is {Number}")
+    Number -= 1
+else:
+    print("While loop ended Thank You!")
