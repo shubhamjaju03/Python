@@ -1,0 +1,41 @@
+alphabet_lower = [
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+    'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+    'u', 'v', 'w', 'x', 'y', 'z'
+]
+
+# Get user input
+axd = input("Do you want to decrypt or encrypt:\n ").lower()
+text = input("Type your message:\n ").lower()
+shift2 = int(input("Enter the shift code:\n "))
+
+# Encryption function
+def encrypt(plain_text, shift_amount):
+    cipher_text = ""
+    for letter in plain_text:
+        if letter in alphabet_lower:
+            position = alphabet_lower.index(letter)
+            new_position = (position + shift_amount) % 26  # Wrap around
+            cipher_text += alphabet_lower[new_position]
+        else:
+            cipher_text += letter  
+    print(f"Encoded text is:\n {cipher_text}")
+
+def decrypt(cipher_text, shift_amount):
+    plain_text = ""
+    for letter in cipher_text:
+        if letter in alphabet_lower:
+            position = alphabet_lower.index(letter)
+            new_position = (position - shift_amount) % 26
+            plain_text += alphabet_lower[new_position]
+        else:
+            plain_text += letter
+    print(f"Decoded text is:\n {plain_text}")
+
+# Run based on user choice
+if axd == "encrypt":
+    encrypt(plain_text=text, shift_amount=shift2)
+elif axd == "decrypt":
+    decrypt(cipher_text=text, shift_amount=shift2)
+else:
+    print("Invalid option. Please choose 'encrypt' or 'decrypt'.")
