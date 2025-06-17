@@ -1,0 +1,96 @@
+import random
+stages = [
+    """
+       -----
+       |   |
+       O   |
+      /|\  |
+      / \  |
+           |
+    =========
+    """,
+    """
+       -----
+       |   |
+       O   |
+      /|\  |
+      /    |
+           |
+    =========
+    """,
+    """
+       -----
+       |   |
+       O   |
+      /|\  |
+           |
+           |
+    =========
+    """,
+    """
+       -----
+       |   |
+       O   |
+      /|   |
+           |
+           |
+    =========
+    """,
+    """
+       -----
+       |   |
+       O   |
+       |   |
+           |
+           |
+    =========
+    """,
+    """
+       -----
+       |   |
+       O   |
+           |
+           |
+           |
+    =========
+    """,
+    """
+       -----
+       |   |
+           |
+           |
+           |
+           |
+    =========
+    """
+]
+
+words = ["arvark", "baboon", "camel"]
+word = random.choice(words)
+
+# Create display with underscores for each letter in the word
+display = ["_"] * len(word)
+
+lives = 6
+
+print(display)
+
+while "_" in display and lives > 0:
+    
+    guess = input("Guess a letter: ").lower()
+
+    if guess in word:
+        for i in range(len(word)):
+            if word[i] == guess:
+                display[i] = guess
+    else:
+        lives -= 1
+        print(stages[lives])  # Show current hangman stage
+    
+    print(display)
+
+if "_" not in display:
+    print("🎉 You win!")
+else:
+    print("💀 You lose!")
+    print(f"The word was: {word}")
