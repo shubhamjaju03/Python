@@ -1,0 +1,30 @@
+import os
+def clear():
+    os.system('cls')  # Only windows 
+
+
+# Print a simple ASCII art logo/banner
+print("""
+      ,
+     /(  ___________
+    |  >:===========`
+     )(
+""")
+bidders = {}
+while True:
+    name = input("Enter your Name: ")
+    bid = input("What's your bid? ₹")
+    bidders[name] = int(bid)  # Store  bid in the dictionary after converting to integer
+    more = input("Is there any other bidder? (Yes/No): ").lower()
+    if more == "yes":
+        clear()
+    else:
+        break
+highest_bid = 0
+winner = ""
+
+for person in bidders:
+    if bidders[person] > highest_bid:
+        highest_bid = bidders[person] 
+        winner = person 
+print(f"\n🏆 The Highest bid is ₹{highest_bid} by {winner}")
