@@ -1,0 +1,30 @@
+import random
+
+def num():
+    print("Welcome to the Number Guessing Game!")
+    
+    # Ask for difficulty first
+    level = input("Choose your level: easy or hard\n").lower()
+    
+    if level == "easy":
+        attempts = 10
+    else:
+        attempts = 5
+
+    new = random.randint(1, 100)  # Random number between 1 and 100
+
+    while attempts > 0:
+        num2 = int(input("I am thinking of a number between 1 and 100:\n"))
+        
+        if num2 == new:
+            print(f"Great job! You guessed it right. The number was {num2}")
+            break
+        else:
+            print(f"Wrong guess. Try again.")
+            attempts -= 1
+            print(f"You have {attempts} attempts left.")
+
+    if attempts == 0:
+        print(f"Game over! The correct number was {new}")
+
+num()
