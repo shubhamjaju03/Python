@@ -1,0 +1,117 @@
+from turtle import Turtle, Screen
+import time
+
+ALIGNMENT = "center"
+FONT = ("Courier", 60, "normal")
+
+class Paddle(Turtle):
+    def __init__(self, position):
+        super().__init__()
+        self.shape("square")
+        self.color("white")
+        self.shapesize(stretch_wid=5, stretch_len=1)
+        self.penup()
+        self.goto(position)
+
+    def go_up(self):
+        new_y = self.ycor() + 20
+        if new_y < 250:
+            self.goto(self.xcor(), new_y)
+
+    def go_down(self):
+        new_y = self.ycor() - 20
+        if new_y > -250:
+            self.goto(self.xcor(), new_y)
+
+class Ball(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.shape("circle")
+        self.color("white")
+        self.penup()
+        self.x_move = 6
+        self.y_move = 6
+
+    def move(self):
+        new_x = self.xcor() + self.x_move
+        new_y = self.ycor() + self.y_move
+        self.goto(new_x, new_y)
+
+    def bounce_y(self):
+        self.y_move *= -1
+
+    def bounce_x(self):
+        self.x_move *= -1
+
+    def reset_position(self):
+        self.goto(0, 0)
+        self.bounce_x()
+
+class Scoreboard(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.color("white")
+        self.penup()
+        self.hideturtle()
+        self.l_score = 0
+        self.r_score = 0
+        self.update_scoreboard()
+
+    def update_scoreboard(self):
+        self.clear()
+        self.goto(-100, 200)
+        self.write(f"{self.l_score}", align=ALIGNMENT, font=FONT)
+        self.goto(100, 200)
+        self.write(f"{self.r_score}", align=ALIGNMENT, font=FONT)
+
+    def l_point(self):
+        self.l_score += 1
+        self.update_scoreboard()
+
+    def r_point(self):
+        self.r_score += 1
+        self.update_scoreboard()
+
+screen = Screen()
+screen.bgcolor("black")
+screen.setup(width=800, height=600)
+screen.title("Pong Game")
+screen.tracer(0)
+
+r_paddle = Paddle((350, 0))
+l_paddle = Paddle((-350, 0))
+ball = Ball()
+scoreboard = Scoreboard()
+
+screen.listen()
+screen.onkey(r_paddle.go_up, "Up")  # up arrow press for right
+screen.onkey(r_paddle.go_down, "Down") #down arrow press for right
+screen.onkey(l_paddle.go_up, "w") #W key press for left
+screen.onkey(l_paddle.go_down, "s") # S key press for left
+
+game_is_on = True
+while game_is_on:
+    time.sleep(0.11)  # you can customize speed
+    screen.update()
+    ball.move()
+
+    if ball.ycor() > 280 or ball.ycor() < -280: # Bounce off top/bottom walls
+        ball.bounce_y()
+
+    if ball.xcor() > 320 and ball.distance(r_paddle) < 50: # Detect paddle collision
+        scoreboard.l_point()
+        ball.bounce_x()
+
+    if ball.xcor() < -320 and ball.distance(l_paddle) < 50: # Detect paddle collision
+        scoreboard.r_point()
+        ball.bounce_x()
+
+    if ball.xcor() > 380:   # Missed by right paddle
+        scoreboard.l_point()
+        ball.reset_position()
+
+    if ball.xcor() < -380:      # Missed by left paddle
+        scoreboard.r_point()
+        ball.reset_position()
+
+screen.exitonclick()
